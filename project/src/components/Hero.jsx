@@ -48,7 +48,7 @@ function Hero() {
               href="#contact"
               className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 px-6 py-3 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md hover:shadow-purple-500/50"
             >
-              Get in Touch
+              Get in Touch!
             </a>
             <a
               href="#projects"
