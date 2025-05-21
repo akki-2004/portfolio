@@ -119,26 +119,7 @@ function Projects() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          variants={itemVariants}
-        >
-          {categories.map((category, index) => (
-            <motion.button
-              key={category}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                index === 0 
-                  ? "bg-accent-teal text-background-dark" 
-                  : "bg-background-card text-text-muted hover:text-accent-teal border border-accent-teal/10"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </motion.div>
+   
 
         {/* Projects Grid */}
         <motion.div 

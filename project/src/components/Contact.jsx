@@ -131,20 +131,7 @@ function Contact() {
             </div>
           </div>
 
-          {/* Availability */}
-          <div className="bg-background-card border border-accent-coral/10 rounded-2xl p-6 md:p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-text-light mb-6">Availability</h3>
-            <ul className="space-y-4 text-text-muted">
-              <li className="flex items-center space-x-3">
-                <MapPin size={20} className="text-accent-gold" />
-                <span>Hyderabad, India</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Clock size={20} className="text-accent-teal" />
-                <span>Mon – Fri, 10AM – 6PM</span>
-              </li>
-            </ul>
-          </div>
+    
         </motion.div>
       </motion.div>
     </section>
