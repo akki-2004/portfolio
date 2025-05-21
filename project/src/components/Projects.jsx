@@ -1,94 +1,258 @@
+import { motion } from "framer-motion";
+import { Code, Github, ExternalLink, Folder, ArrowUpRight } from "lucide-react";
+
 function Projects() {
   const projects = [
     {
       title: 'Evidence Management System',
-      description: " Designed and implemented a blockchain-powered evidence management system using Solidity and IPFS for immutable data storage. Built the frontend with React.js for an intuitive user interface and the backend with Node.js and Express.js for efficient API handling.Implemented MongoDB for secure credential storage and optimized case management features like FIR filing andlawyer hiring.",
-      image: '',
-      technologies: ['React', 'Node.js', 'MongoDB', 'BlockChain', 'Solidity'],
-      // liveLink: '#',
+      description: "Designed and implemented a blockchain-powered evidence management system using Solidity and IPFS for immutable data storage. Built the frontend with React.js for an intuitive user interface and the backend with Node.js and Express.js for efficient API handling.",
+      image: 'https://via.placeholder.com/600x400/2DD4BF/FFFFFF?text=Evidence+Management',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Blockchain', 'Solidity'],
+      category: 'Full Stack',
       githubLink: 'https://github.com/akki-2004/EMS'
     },
     {
-      title: 'Domain-Specific Intelligent Chatbot for SMEs',
-      description: 'Developed an AI-powered chatbot for SMEs in education, hospitality, tourism, healthcare, and retail using fine- tuned Large Language Models(LLMs) and Retrieval - Augmented Generation(RAG). Integrated document processing capabilities to extract embeddings from PDFs and store them in a vector database for accurate, context - aware responses. Built using React.js (Frontend), Node.js / Express.js(Backend), MongoDB(Database), Unicorn(LLM Hosting), and JWT for secure authentication.',
-      image: '',
-      technologies: ['AI', 'Machine Learning', 'LLM','RAG','MERN'],
-        // liveLink: '#',
-          githubLink: 'https://github.com/akki-2004/ChatBot'
-},
-{
-  title: 'Blog Page',
-    description: 'Built a dynamic platform enabling users to create, edit, and manage blog posts using React.js for responsive frontend and Express.js with MongoDB for robust backend data management. Designed and implemented RESTful API’s for seamless integration of data between frontend and backend systems, optimizing user interaction and content management.',
-      image: '',
+      title: 'Domain-Specific Intelligent Chatbot',
+      description: 'Developed an AI-powered chatbot for SMEs using fine-tuned Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG). Integrated document processing capabilities to extract embeddings from PDFs for accurate, context-aware responses.',
+      image: 'https://via.placeholder.com/600x400/FB923C/FFFFFF?text=AI+Chatbot',
+      technologies: ['AI', 'Machine Learning', 'LLM', 'RAG', 'MERN'],
+      category: 'AI & ML',
+      githubLink: 'https://github.com/akki-2004/ChatBot'
+    },
+    {
+      title: 'Blog Platform',
+      description: 'Built a dynamic platform enabling users to create, edit, and manage blog posts using React.js for responsive frontend and Express.js with MongoDB for robust backend data management. Designed and implemented RESTful APIs for seamless integration.',
+      image: 'https://via.placeholder.com/600x400/FBBF24/FFFFFF?text=Blog+Platform',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-          // liveLink: '#',
-            githubLink: 'https://github.com/akki-2004/Blog-Page'
-},
-{
-  title: 'Mithra---Student-Application',
-  description: "Developed a comprehensive platform using Django and JavaScript to manage student information, including attendance tracking, timetable management, and results. Integrated college APIs to fetch and display accurate student data, facilitating efficient academic management and enhancing user experience.",
-  image: '',
-  technologies: ['React', 'Node.js', 'MongoDB', 'BlockChain', 'Solidity'],
-  // liveLink: '#',
-  githubLink: 'https://github.com/akki-2004/Mithra---Student-Application'
-},
-{
-  title: 'WeatherApp',
-  description: 'This App provides real-time weather updates by integrating with a weather API. It allows users to search for weather conditions by city, displaying key details like temperature, humidity, wind speed, and weather conditions. The app may also support location-based weather updates, unit conversion between Celsius and Fahrenheit, and a responsive UI for both desktop and mobile users. Future improvements could include historical weather data, map integration, and push notifications for severe weather conditions.',
-  image: '',
-  technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-    // liveLink: '#',
+      category: 'Web Development',
+      githubLink: 'https://github.com/akki-2004/Blog-Page'
+    },
+    {
+      title: 'Mithra Student Application',
+      description: "Developed a comprehensive platform using Django and JavaScript to manage student information, including attendance tracking, timetable management, and results. Integrated college APIs to fetch and display accurate student data.",
+      image: 'https://via.placeholder.com/600x400/2DD4BF/FFFFFF?text=Student+App',
+      technologies: ['Django', 'JavaScript', 'Python', 'REST API'],
+      category: 'Web Application',
+      githubLink: 'https://github.com/akki-2004/Mithra---Student-Application'
+    },
+    {
+      title: 'Weather Application',
+      description: 'Created a real-time weather app that integrates with a weather API to provide current conditions by city. Features include temperature, humidity, wind speed data, location-based updates, and unit conversion between Celsius and Fahrenheit.',
+      image: 'https://via.placeholder.com/600x400/FB923C/FFFFFF?text=Weather+App',
+      technologies: ['React', 'API Integration', 'JavaScript', 'CSS'],
+      category: 'Frontend',
       githubLink: 'https://github.com/akki-2004/Weather_App'
-},
-{
-title: 'AI Interview System',
-description: 'AI Interview System is an intelligent platform that automates the hiring process by conducting AI-driven interviews. It uses advanced machine learning and NLP to evaluate candidates based on their responses, analyzing speech patterns, sentiment, and content relevance. Recruiters can create custom interview questions, and the system can assess candidates in real-time or asynchronously. It also generates performance reports, provides AI-driven feedback, and ranks candidates based on predefined criteria.',
-  image: '',
-  technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-      // liveLink: '#',
-        githubLink: 'https://github.com/akki-2004/Ai_Interview_System'
-}
+    },
+    {
+      title: 'AI Interview System',
+      description: 'Developed an intelligent platform that automates the hiring process using AI-driven interviews. Uses advanced machine learning and NLP to evaluate candidates based on their responses, analyzing speech patterns and content relevance.',
+      image: 'https://via.placeholder.com/600x400/FBBF24/FFFFFF?text=AI+Interview',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'ML'],
+      category: 'AI & Full Stack',
+      githubLink: 'https://github.com/akki-2004/Ai_Interview_System'
+    }
   ];
 
-return (
-  <section id="projects" className="py-20 text-white">
-    <h2 className="text-center text-3xl font-bold mb-12">
-      Projects
-    </h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-      {projects.map((project, index) => (
-        <div key={index} className="bg-[#1a1a3a] p-6 rounded-xl transition-all duration-300 hover:scale-105">
-          <div className="relative w-full h-10 mb-4">
-            <span className="text-sm text-gray-400 absolute top-1 left-2">{project.title}</span>
-          </div>
-          <h3 className="text-lg font-bold text-white-400 mb-2">{project.title}</h3>
-          <p className="text-gray-400 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech, i) => (
-              <span
-                key={i}
-                className="bg-purple-500 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="flex gap-4">
+  // Animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
 
-            <a
-              href={project.githubLink}
-              className="border border-purple-500 text-purple-400 px-4 py-2 rounded-lg hover:bg-purple-500 hover:text-white transition"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
+  // Filter categories
+  const categories = ['All', ...new Set(projects.map(project => project.category))];
+  
+  return (
+    <section id="projects" className="py-24 relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-radial from-background-dark to-background-dark/90 -z-10"></div>
+      <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-soft-light -z-10"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-teal/20 to-transparent"></div>
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-coral/20 to-transparent"></div>
+      
+      <motion.div 
+        className="container mx-auto px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={sectionVariants}
+      >
+        {/* Section Header */}
+        <motion.div variants={itemVariants} className="mb-16 relative">
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-px w-12 bg-accent-teal/50"></div>
+            <span className="mx-4 text-accent-teal font-medium px-4 py-1 rounded-full border border-accent-teal/20 text-sm flex items-center">
+              <Code size={14} className="mr-2" />
+              My Work
+            </span>
+            <div className="h-px w-12 bg-accent-teal/50"></div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+          
+          <h2 className="text-center text-4xl md:text-5xl font-bold mb-4 text-text-light">
+            Featured Projects
+          </h2>
+          
+          <p className="text-center text-text-muted max-w-2xl mx-auto">
+            A collection of my recent development work
+          </p>
+        </motion.div>
+
+        {/* Category Filter */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          variants={itemVariants}
+        >
+          {categories.map((category, index) => (
+            <motion.button
+              key={category}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                index === 0 
+                  ? "bg-accent-teal text-background-dark" 
+                  : "bg-background-card text-text-muted hover:text-accent-teal border border-accent-teal/10"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {category}
+            </motion.button>
+          ))}
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          variants={itemVariants}
+        >
+          {projects.map((project, index) => (
+            <motion.div 
+              key={index}
+              className="group"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="bg-background-card border border-accent-teal/10 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
+                {/* Project Image */}
+                <div className="relative overflow-hidden h-48">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-70"></div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-accent-teal/90 backdrop-blur-sm text-background-dark px-3 py-1 rounded-lg text-xs font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+                  
+                  {/* Links */}
+                  <div className="absolute top-4 right-4 flex space-x-2">
+                    <motion.a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-background-card/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-light hover:text-accent-teal transition-colors"
+                      whileHover={{ scale: 1.2, backgroundColor: "rgba(45, 212, 191, 0.2)" }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <Github size={16} />
+                    </motion.a>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-text-light mb-2 group-hover:text-accent-teal transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-text-muted mb-6 flex-grow">
+                    {project.description}
+                  </p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies.slice(0, 3).map((tech, i) => (
+                      <span
+                        key={i}
+                        className="bg-accent-teal/10 text-accent-teal px-2 py-1 rounded-md text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="bg-accent-coral/10 text-accent-coral px-2 py-1 rounded-md text-xs font-medium">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                
+                {/* View Project Button */}
+                <div className="px-6 pb-6">
+                  <motion.a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full py-3 rounded-lg bg-background-dark border border-accent-teal/20 text-text-light hover:bg-accent-teal hover:text-background-dark transition-colors group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>View Project</span>
+                    <motion.span
+                      className="ml-2"
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 3 }}
+                    >
+                      <ArrowUpRight size={16} />
+                    </motion.span>
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        {/* View More Button */}
+        <motion.div 
+          className="flex justify-center mt-12"
+          variants={itemVariants}
+        >
+          <motion.a
+            href="https://github.com/akki-2004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-background-card border border-accent-teal/20 rounded-lg text-text-light hover:bg-accent-teal hover:text-background-dark transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Github size={18} />
+            <span>View More on GitHub</span>
+          </motion.a>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 }
 
 export default Projects;
