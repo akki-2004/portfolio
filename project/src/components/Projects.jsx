@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { Code, Github, ExternalLink, Folder, ArrowUpRight } from "lucide-react";
-
+import img1 from "./ems.png"
+import img2 from "./dsic.png"
+import img3 from "./bp.png"
+import img4 from "./interview.png"
+import img5 from "./mithra.png"
+import img6 from "./wheather.png"
 function Projects() {
   const projects = [
     {
       title: 'Evidence Management System',
       description: "Designed and implemented a blockchain-powered evidence management system using Solidity and IPFS for immutable data storage. Built the frontend with React.js for an intuitive user interface and the backend with Node.js and Express.js for efficient API handling.",
-      image: 'https://via.placeholder.com/600x400/2DD4BF/FFFFFF?text=Evidence+Management',
+      image: img1,
       technologies: ['React', 'Node.js', 'MongoDB', 'Blockchain', 'Solidity'],
       category: 'Full Stack',
       githubLink: 'https://github.com/akki-2004/EMS'
@@ -14,7 +19,7 @@ function Projects() {
     {
       title: 'Domain-Specific Intelligent Chatbot',
       description: 'Developed an AI-powered chatbot for SMEs using fine-tuned Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG). Integrated document processing capabilities to extract embeddings from PDFs for accurate, context-aware responses.',
-      image: 'https://via.placeholder.com/600x400/FB923C/FFFFFF?text=AI+Chatbot',
+      image: img2,
       technologies: ['AI', 'Machine Learning', 'LLM', 'RAG', 'MERN'],
       category: 'AI & ML',
       githubLink: 'https://github.com/akki-2004/ChatBot'
@@ -22,7 +27,7 @@ function Projects() {
     {
       title: 'Blog Platform',
       description: 'Built a dynamic platform enabling users to create, edit, and manage blog posts using React.js for responsive frontend and Express.js with MongoDB for robust backend data management. Designed and implemented RESTful APIs for seamless integration.',
-      image: 'https://via.placeholder.com/600x400/FBBF24/FFFFFF?text=Blog+Platform',
+      image: img3,
       technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
       category: 'Web Development',
       githubLink: 'https://github.com/akki-2004/Blog-Page'
@@ -30,7 +35,7 @@ function Projects() {
     {
       title: 'Mithra Student Application',
       description: "Developed a comprehensive platform using Django and JavaScript to manage student information, including attendance tracking, timetable management, and results. Integrated college APIs to fetch and display accurate student data.",
-      image: 'https://via.placeholder.com/600x400/2DD4BF/FFFFFF?text=Student+App',
+      image: img5,
       technologies: ['Django', 'JavaScript', 'Python', 'REST API'],
       category: 'Web Application',
       githubLink: 'https://github.com/akki-2004/Mithra---Student-Application'
@@ -38,7 +43,7 @@ function Projects() {
     {
       title: 'Weather Application',
       description: 'Created a real-time weather app that integrates with a weather API to provide current conditions by city. Features include temperature, humidity, wind speed data, location-based updates, and unit conversion between Celsius and Fahrenheit.',
-      image: 'https://via.placeholder.com/600x400/FB923C/FFFFFF?text=Weather+App',
+      image: img6,
       technologies: ['React', 'API Integration', 'JavaScript', 'CSS'],
       category: 'Frontend',
       githubLink: 'https://github.com/akki-2004/Weather_App'
@@ -46,7 +51,7 @@ function Projects() {
     {
       title: 'AI Interview System',
       description: 'Developed an intelligent platform that automates the hiring process using AI-driven interviews. Uses advanced machine learning and NLP to evaluate candidates based on their responses, analyzing speech patterns and content relevance.',
-      image: 'https://via.placeholder.com/600x400/FBBF24/FFFFFF?text=AI+Interview',
+      image: img4,
       technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'ML'],
       category: 'AI & Full Stack',
       githubLink: 'https://github.com/akki-2004/Ai_Interview_System'

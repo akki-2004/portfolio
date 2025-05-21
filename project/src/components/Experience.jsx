@@ -1,40 +1,3 @@
-// function Experience() {
-//   return (
-//     <section id="experience" className="py-20 text-white">
-//       <div className="container mx-auto px-6 lg:px-16">
-      
-//         <h2 className="text-center text-3xl font-bold mb-12">
-//           Experience
-//         </h2>
-
-//         {/* Experience Card */}
-//         <div className="relative p-8 rounded-lg shadow-lg">
-//           {/* Timeline Dot & Line */}
-//           <div className="absolute left-2 top-0 h-full w-1 bg-purple-500"></div>
-
-//           {/* Job Details */}
-//           <h3 className="text-2xl font-semibold">MERN Stack Developer Intern</h3>
-//           <p className="text-gray-400">
-//             The Tann Mann Gaadi, Bangalore <span className="ml-4">June 2024 – Sept 2024</span>
-//           </p>
-
-//           {/* Job Responsibilities */}
-//           <ul className="mt-4 space-y-2 text-gray-300 list-disc list-inside">
-//             <li>Developed dynamic and user-centric web pages using React.js, enhancing user experience with intuitive, responsive interfaces.</li>
-//             <li>Optimized backend integration with Node.js and Express.js for efficient data retrieval and real-time updates, ensuring robust application performance.</li>
-//             <li>Engineered and managed MongoDB database schemas, ensuring secure and efficient storage of critical information.</li>
-//           </ul>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Experience;
-
-
-
-
 import { motion } from "framer-motion";
 import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 
@@ -52,13 +15,13 @@ function Experience() {
         "Engineered and managed MongoDB database schemas, ensuring secure and efficient storage of critical information."
       ],
       skills: ["React", "Node.js", "Express", "MongoDB", "JavaScript"],
-      companyUrl: "https://thetannmanngaadi.com"
+      companyUrl: "https://www.thetannmanngaadi.org/"
     },
     {
-      title: "Frontend Developer",
+      title: "Full Stack Developer",
       company: "WiseMango",
       location: "Remote",
-      period: "Jan 2024 – May 2024",
+      period: "April 2025 – May 2025",
       description: "Contributed to building modern web interfaces and improving user experience.",
       responsibilities: [
         "Designed and implemented responsive user interfaces using React and Tailwind CSS.",
@@ -66,7 +29,7 @@ function Experience() {
         "Optimized application performance and loading times through code refactoring and best practices."
       ],
       skills: ["React", "Tailwind CSS", "JavaScript", "UI/UX", "Git"],
-      companyUrl: "https://wisemango.com"
+      companyUrl: "https://wisemango.io/"
     }
   ];
 
@@ -96,11 +59,11 @@ function Experience() {
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-radial from-background-dark to-background-dark/90 -z-10"></div>
       <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-soft-light -z-10"></div>
-      
+
       {/* Decorative elements */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-coral/20 to-transparent"></div>
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-teal/20 to-transparent"></div>
-      
+
       <motion.div 
         className="container mx-auto px-6"
         initial="hidden"
@@ -118,11 +81,11 @@ function Experience() {
             </span>
             <div className="h-px w-12 bg-accent-coral/50"></div>
           </div>
-          
+
           <h2 className="text-center text-4xl md:text-5xl font-bold mb-4 text-text-light">
             Professional Experience
           </h2>
-          
+
           <p className="text-center text-text-muted max-w-2xl mx-auto">
             My journey through various roles and projects
           </p>
@@ -132,16 +95,16 @@ function Experience() {
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-0 md:left-1/2 top-0 h-full w-px bg-accent-teal/20 transform md:-translate-x-px"></div>
-          
+
           {/* Experience Cards */}
           {experiences.map((exp, index) => (
             <motion.div 
-              key={index}
-              className={`relative mb-12 md:mb-24 ${
-                index % 2 === 0 ? 'md:pr-12 md:text-right md:ml-0 md:mr-auto' : 'md:pl-12 md:ml-auto md:mr-0'
-              } w-full md:w-1/2 pl-10 md:pl-0`}
-              variants={itemVariants}
-            >
+    key={index}
+    className={`relative mb-12 md:mb-24 w-full md:w-1/2 ${
+      index % 2 === 0 ? 'md:pr-12 md:ml-0 md:mr-auto' : 'md:pl-12 md:ml-auto md:mr-0'
+    }`}
+    variants={itemVariants}
+  >
               {/* Timeline dot */}
               <motion.div 
                 className="absolute left-0 md:left-1/2 top-0 w-8 h-8 bg-background-card rounded-full border-4 border-accent-teal flex items-center justify-center transform -translate-x-1/2 z-10"
@@ -154,7 +117,7 @@ function Experience() {
                   <Briefcase size={14} />
                 </span>
               </motion.div>
-              
+
               {/* Card */}
               <motion.div 
                 className="bg-background-card border border-accent-teal/10 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-accent-teal/5 transition-all duration-300"
@@ -184,7 +147,7 @@ function Experience() {
                   </div>
                   <p className="text-text-muted">{exp.description}</p>
                 </div>
-                
+
                 {/* Responsibilities */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-text-light mb-3">Key Responsibilities:</h4>
@@ -204,7 +167,7 @@ function Experience() {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Skills */}
                 <div>
                   <h4 className="text-lg font-semibold text-text-light mb-3">Technologies:</h4>

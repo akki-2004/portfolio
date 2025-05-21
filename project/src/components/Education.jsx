@@ -164,7 +164,7 @@ function Education() {
         </motion.div>
 
         {/* Education Timeline */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           {/* Timeline line */}
           <div className="absolute left-0 md:left-1/2 top-0 h-full w-px bg-accent-coral/20 transform md:-translate-x-px"></div>
           
@@ -172,9 +172,10 @@ function Education() {
           {education.map((edu, index) => (
             <motion.div 
               key={index}
-              className={`relative mb-16 md:mb-24 ${
-                index % 2 === 0 ? 'md:pr-12 md:text-right md:ml-0 md:mr-auto' : 'md:pl-12 md:ml-auto md:mr-0'
-              } w-full md:w-1/2 pl-10 md:pl-0`}
+              className={`relative mb-16 md:mb-24 w-full md:w-1/2 ${
+  index % 2 === 0 ? 'md:pr-12 md:ml-0 md:mr-auto text-left' : 'md:pl-12 md:ml-auto md:mr-0 text-left'
+}`}
+
               variants={itemVariants}
             >
               {/* Timeline dot */}
