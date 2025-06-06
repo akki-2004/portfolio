@@ -32,33 +32,31 @@ function Hero() {
       variants={containerVariants}
       id="home"
     >
-      {/* Geometric shapes */}
+      {/* Optimized geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
-          className="absolute top-1/4 right-[10%] w-64 h-64 rounded-full bg-accent-teal/5 blur-3xl"
+          className="absolute top-1/4 right-[10%] w-64 h-64 rounded-full bg-accent-teal/3 blur-3xl"
           animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 180, 270, 360],
-            opacity: [0.1, 0.15, 0.1]
+            scale: [1, 1.1, 1],
+            opacity: [0.05, 0.1, 0.05]
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-1/4 left-[5%] w-80 h-80 rounded-full bg-accent-coral/5 blur-3xl"
+          className="absolute bottom-1/4 left-[5%] w-80 h-80 rounded-full bg-accent-coral/3 blur-3xl"
           animate={{ 
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 270, 180, 90, 0],
-            opacity: [0.1, 0.15, 0.1]
+            scale: [1.1, 1, 1.1],
+            opacity: [0.05, 0.1, 0.05]
           }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-[10%] left-[30%] w-72 h-72 rounded-full bg-accent-gold/5 blur-3xl"
+          className="absolute top-[10%] left-[30%] w-72 h-72 rounded-full bg-accent-gold/3 blur-3xl"
           animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1]
+            scale: [1, 1.15, 1],
+            opacity: [0.05, 0.1, 0.05]
           }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
@@ -176,22 +174,17 @@ function Hero() {
           className="lg:w-1/2 flex justify-center items-center relative"
           variants={itemVariants}
         >
-          {/* Decorative elements */}
+          {/* Simplified decorative elements */}
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div 
-              className="w-72 h-72 md:w-80 md:h-80 rounded-full border border-accent-teal/20"
+              className="w-72 h-72 md:w-80 md:h-80 rounded-full border border-accent-teal/10"
               animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             />
             <motion.div 
-              className="absolute w-80 h-80 md:w-96 md:h-96 rounded-full border border-accent-coral/20"
+              className="absolute w-80 h-80 md:w-96 md:h-96 rounded-full border border-accent-coral/10"
               animate={{ rotate: -360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div 
-              className="absolute w-64 h-64 md:w-72 md:h-72 rounded-full border border-accent-gold/20"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
             />
           </div>
           
