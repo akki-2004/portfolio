@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from './components/Hero';
@@ -13,17 +13,12 @@ import Testimonials from './components/Testimonials';
 function App() {
   const [loading, setLoading] = useState(true);
 
-  // Use ref for cursor position to avoid too many state updates
-  const cursorPosRef = useRef({ x: 0, y: 0 });
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const requestRef = useRef();
-
-  // Shapes config
+  // Optimized shapes config with reduced animations
   const shapes = [
-    { size: 'w-64 h-64', color: 'bg-accent-teal/5', position: 'top-20 -left-32', delay: 0 },
-    { size: 'w-96 h-96', color: 'bg-accent-coral/5', position: 'top-1/4 -right-48', delay: 0.2 },
-    { size: 'w-80 h-80', color: 'bg-accent-gold/5', position: 'bottom-1/3 -left-40', delay: 0.4 },
-    { size: 'w-72 h-72', color: 'bg-accent-teal/5', position: 'bottom-20 -right-36', delay: 0.6 },
+    { size: 'w-64 h-64', color: 'bg-accent-teal/3', position: 'top-20 -left-32', delay: 0 },
+    { size: 'w-96 h-96', color: 'bg-accent-coral/3', position: 'top-1/4 -right-48', delay: 0.5 },
+    { size: 'w-80 h-80', color: 'bg-accent-gold/3', position: 'bottom-1/3 -left-40', delay: 1 },
+    { size: 'w-72 h-72', color: 'bg-accent-teal/3', position: 'bottom-20 -right-36', delay: 1.5 },
   ];
 
   // Generate stable random positions for shapes only once
@@ -38,30 +33,9 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500); // Reduced loading time
 
     return () => clearTimeout(timer);
-  }, []);
-
-  // Cursor tracking with useRef + requestAnimationFrame for smoothness
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      cursorPosRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    const animate = () => {
-      setCursorPosition(cursorPosRef.current);
-      requestRef.current = requestAnimationFrame(animate);
-    };
-
-    requestRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(requestRef.current);
-    };
   }, []);
 
   return (
@@ -97,44 +71,26 @@ function App() {
       ) : (
         // Main content
         <div className="relative min-h-screen bg-background-dark text-text-light overflow-hidden">
-          {/* Custom cursor */}
-          <motion.div
-            className="fixed w-8 h-8 rounded-full border-2 border-accent-teal mix-blend-difference pointer-events-none z-50"
-            animate={{
-              x: cursorPosition.x - 16,
-              y: cursorPosition.y - 16,
-              scale: [1, 1.2, 1],
-              borderColor: ['#2DD4BF', '#FB923C', '#FBBF24', '#2DD4BF'],
-            }}
-            transition={{
-              x: { duration: 0.1, ease: 'linear' },
-              y: { duration: 0.1, ease: 'linear' },
-              scale: { duration: 4, repeat: Infinity },
-              borderColor: { duration: 8, repeat: Infinity },
-            }}
-          />
-
           {/* Background noise texture */}
-          <div className="fixed inset-0 bg-noise opacity-[0.03] mix-blend-soft-light pointer-events-none"></div>
+          <div className="fixed inset-0 bg-noise opacity-[0.02] mix-blend-soft-light pointer-events-none"></div>
 
-          {/* Animated background shapes */}
+          {/* Optimized background shapes with reduced animations */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
             {shapes.map((shape, index) => (
               <motion.div
                 key={index}
                 className={`absolute rounded-full blur-3xl ${shape.size} ${shape.color}`}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
-                  opacity: 0.8,
-                  scale: [0.8, 1.2, 0.8],
-                  x: [0, 20, 0],
-                  y: [0, -20, 0],
+                  opacity: 0.6,
+                  scale: [0.9, 1.1, 0.9],
                 }}
                 transition={{
                   delay: shape.delay,
-                  duration: 15,
+                  duration: 20,
                   repeat: Infinity,
                   repeatType: 'reverse',
+                  ease: 'easeInOut',
                 }}
                 style={shapePositions[index]}
               />

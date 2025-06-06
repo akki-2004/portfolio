@@ -61,35 +61,44 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Handle scroll effect
+  // Optimized scroll effect with throttling
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      // Update scrolled state
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-      
-      // Update active section based on scroll position
-      const sections = ['about', 'experience', 'projects', 'education', 'testimonials', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            setActiveSection(section);
-            break;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          // Update scrolled state
+          const isScrolled = window.scrollY > 50;
+          if (isScrolled !== scrolled) {
+            setScrolled(isScrolled);
           }
-        }
-      }
-      
-      // If at the top, set to home
-      if (window.scrollY < 100) {
-        setActiveSection('home');
+          
+          // Update active section based on scroll position (simplified)
+          const sections = ['about', 'experience', 'projects', 'education', 'testimonials', 'contact'];
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= 200 && rect.bottom >= 200) {
+                setActiveSection(section);
+                break;
+              }
+            }
+          }
+          
+          // If at the top, set to home
+          if (window.scrollY < 100) {
+            setActiveSection('home');
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

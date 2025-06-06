@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html, body {
+/* Performance optimizations */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -10,12 +15,40 @@
   overflow-x: hidden;
 }
 
-
-
-
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-} */
+  /* Hardware acceleration for smoother animations */
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize animations and transitions */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve performance for fixed elements */
+.fixed {
+  will-change: transform;
+}
+
+/* Optimize blur effects */
+.blur-3xl {
+  will-change: transform, opacity;
+}
 
